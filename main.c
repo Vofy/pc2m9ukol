@@ -1,8 +1,11 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "data_read/data_read.h"
-#include "data_analisys/data_analisys.h"
-#include "data_print/data_print.h"
+#include "types.h"
+#include "data_read.h"
+#include "data_analisys.h"
+#include "data_print.h"
+
+const unsigned short int FIRST_YEAR = 1995;
 
 int main()
 {
@@ -18,8 +21,8 @@ int main()
     // Analyze data
     float        *avyear          = get_average_temperatures_in_years(years_count, measurements);
     float        *avmonth         = get_average_temperatures_in_months(years_count, measurements);
-    month_array_t tropical_months = get_tropical_months(years_count, measurements);
-    month_array_t arctic_months   = get_arctic_months(years_count, measurements);
+    t_month_array tropical_months = get_tropical_months(years_count, measurements);
+    t_month_array arctic_months   = get_arctic_months(years_count, measurements);
 
 
     // Print data
@@ -27,7 +30,7 @@ int main()
 
     print_measurements(output, years_count, measurements);
 
-    int selected_month = 1;
+    int selected_month = 4;
     int selected_year  = 1999;
     print_average_temperature(output, selected_month, selected_year, measurements);
 

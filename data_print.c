@@ -2,8 +2,9 @@
 #include <stdlib.h>
 #include <string.h>
 #include <stdarg.h>
+#include "data_analisys.h"
 
-#include "../data_analisys/data_analisys.h"
+extern const unsigned short int FIRST_YEAR;
 
 int ofprintf(FILE *file, char format[], ...)
 {
@@ -22,7 +23,7 @@ int ofprintf(FILE *file, char format[], ...)
 
 void print_average_temperature(FILE *file, int month, int year, float measurements[][12])
 {
-    ofprintf(file, "Average temperature in %d/%d was %f deg. C.\n\n\n", month, year/*, measurements[year][month - 1]*/);
+    ofprintf(file, "Average temperature in %d/%d was %3.1f deg. C.\n\n\n", month, year, measurements[year - FIRST_YEAR][month - 1]);
 }
 
 void print_measurements(FILE *file, int years, float measurements[years][12])
@@ -31,7 +32,7 @@ void print_measurements(FILE *file, int years, float measurements[years][12])
 
     for(int year = 0; year < years; year++)
     {
-        ofprintf(file, "%4d: ", 1995 + year);
+        ofprintf(file, "%4d: ", FIRST_YEAR + year);
 
         for (int month = 0; month < 12; month++)
             ofprintf(file, "%6.1f", measurements[year][month]);
@@ -48,7 +49,7 @@ void print_average_temperatures_in_years(FILE *file, int years, float *average_y
 
     for(int year = 0; year < years; year++)
     {
-        ofprintf(file, "%4d: %4.1f deg. C\n", 1995 + year, average_years[year]);
+        ofprintf(file, "%4d: %4.1f deg. C\n", FIRST_YEAR + year, average_years[year]);
     }
 
     ofprintf(file, "\n\n");
@@ -56,7 +57,7 @@ void print_average_temperatures_in_years(FILE *file, int years, float *average_y
 
 void print_average_temperatures_in_months(FILE *file, float average_months[])
 {
-    ofprintf(file, "Average temperature in month (in period 1995-2010):\n\n");
+    ofprintf(file, "Average temperature in month:\n\n");
 
     for(int month = 0; month < 12; month++)
     {
@@ -66,25 +67,25 @@ void print_average_temperatures_in_months(FILE *file, float average_months[])
     ofprintf(file, "\n\n");
 }
 
-void print_tropical_months(FILE *file, month_array_t months)
+void print_tropical_months(FILE *file, t_month_array months)
 {
     ofprintf(file, "Tropical months:\n\n");
 
     for(int count = 0; count < months.length; count++)
     {
-        ofprintf(file, "%2d/%4d: %4.1f deg. C\n", months.data[count].month, months.data[count].year + 1995, months.data[count].temperature);
+        ofprintf(file, "%2d/%4d: %4.1f deg. C\n", months.data[count].month, months.data[count].year + FIRST_YEAR, months.data[count].temperature);
     }
 
     ofprintf(file, "\n\n");
 }
 
-void print_arctic_months(FILE *file, month_array_t months)
+void print_arctic_months(FILE *file, t_month_array months)
 {
     ofprintf(file, "Arctic months:\n\n");
 
     for(int count = 0; count < months.length; count++)
     {
-        ofprintf(file, "%2d/%4d: %4.1f deg. C\n", months.data[count].month, months.data[count].year + 1995, months.data[count].temperature);
+        ofprintf(file, "%2d/%4d: %4.1f deg. C\n", months.data[count].month, months.data[count].year + FIRST_YEAR, months.data[count].temperature);
     }
 
     ofprintf(file, "\n\n");

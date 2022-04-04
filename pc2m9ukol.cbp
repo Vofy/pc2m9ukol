@@ -32,21 +32,25 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
-		<Unit filename="data_analisys/data_analisys.h" />
-		<Unit filename="data_analisys/data_analysis.c">
+		<Unit filename="data_analisys.h" />
+		<Unit filename="data_analysis.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="data_print/data_print.c">
+		<Unit filename="data_print.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="data_print/data_print.h" />
-		<Unit filename="data_read/data_read.c">
+		<Unit filename="data_print.h" />
+		<Unit filename="data_read.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="data_read/data_read.h" />
+		<Unit filename="data_read.h" />
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="types.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="types.h" />
 		<Extensions />
 	</Project>
 </CodeBlocks_project_file>

@@ -1,17 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
-
-typedef struct {
-    int month;
-    int year;
-    float temperature;
-} month_t;
-
-typedef struct {
-    month_t *data;
-    int length;
-} month_array_t;
+#include "types.h"
 
 float *get_average_temperatures_in_years(int years, float measurements[][12])
 {
@@ -47,28 +37,28 @@ float *get_average_temperatures_in_months(int years, float measurements[][12])
     return average_months;
 }
 
-month_array_t get_tropical_months(int years, float measurements[][12])
+t_month_array get_tropical_months(int years, float measurements[][12])
 {
-    month_t *tropical_months = malloc(10 * sizeof tropical_months);
+    t_month *tropical_months = malloc(10 * sizeof tropical_months);
 
     int index = 0;
     for(int year = 0; year < years; year++)
         for (int month = 0; month < 12; month++)
             if(measurements[year][month] >= 32)
-                tropical_months[index++] = (month_t) { month + 1, year, measurements[year][month] };
+                tropical_months[index++] = (t_month) { month + 1, year, measurements[year][month] };
 
-    return (month_array_t) { tropical_months, index };
+    return (t_month_array) { tropical_months, index };
 }
 
-month_array_t get_arctic_months(int years, float measurements[][12])
+t_month_array get_arctic_months(int years, float measurements[][12])
 {
-    month_t *arctic_months = malloc(10 * sizeof(month_t));
+    t_month *arctic_months = malloc(10 * sizeof(t_month));
 
     int index = 0;
     for(int year = 0; year < years; year++)
         for (int month = 0; month < 12; month++)
             if(measurements[year][month] <= -6)
-                arctic_months[index++] = (month_t) { month + 1, year, measurements[year][month] };
+                arctic_months[index++] = (t_month) { month + 1, year, measurements[year][month] };
 
-    return (month_array_t) { arctic_months, index };
+    return (t_month_array) { arctic_months, index };
 }
