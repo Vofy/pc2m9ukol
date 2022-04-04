@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include "types.h"
 
 enum char_type
 {
@@ -8,6 +9,8 @@ enum char_type
     END_OF_LINE,
     UNDEFINED
 };
+
+unsigned int lines = 0;
 
 int resolve_char_type(char c)
 {
@@ -38,8 +41,21 @@ int count_lines(FILE *file)
     return lines + 1;
 }
 
-void read_measurements(FILE *file, float measurements[][12])
+int get_lines(FILE *file)
 {
+    return lines ? lines : count_lines(file);
+}
+
+t_measurements_array read_measurements(FILE *file)
+{
+    int lines = get_lines(file);
+    float **measurements = malloc(lines * sizeof(float*));
+    for(int i = 0; i < lines; i++)
+    {
+        measurements[i] = malloc(12 * sizeof(float));
+    }
+
+
     char c;
 
     char cislo[6];              // Buffer pro jednotliva cisla
@@ -71,4 +87,6 @@ void read_measurements(FILE *file, float measurements[][12])
         }
     }
     while (c != EOF);
+
+    return (t_measurements_array) { measurements, lines };
 }

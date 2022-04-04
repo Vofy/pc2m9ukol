@@ -1,5 +1,10 @@
 typedef struct {
-    float *measurements;
+    int month;
+    int year;
+} t_date;
+
+typedef struct {
+    float **data;
     int length;
 } t_measurements_array;
 

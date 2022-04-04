@@ -2,7 +2,12 @@
 #define TYPES_H_INCLUDED
 
 typedef struct {
-    float *measurements;
+    int month;
+    int year;
+} t_date;
+
+typedef struct {
+    float **data;
     int length;
 } t_measurements_array;
 
@@ -16,6 +21,5 @@ typedef struct {
     t_month *data;
     int length;
 } t_month_array;
-
 
 #endif // TYPES_H_INCLUDED

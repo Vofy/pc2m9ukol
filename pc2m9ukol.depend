@@ -18,9 +18,10 @@
 	<stdio.h>
 	<stdlib.h>
 
-1649090391 source:/home/vofy/Projects/pc2m9ukol/main.c
+1649098565 source:/home/vofy/Projects/pc2m9ukol/main.c
 	<stdio.h>
 	<stdlib.h>
+	<stdbool.h>
 	"types.h"
 	"data_read.h"
 	"data_analisys.h"
@@ -30,31 +31,33 @@
 
 1649085635 /home/vofy/Projects/pc2m9ukol/data_print/data_print.h
 
-1649090705 /home/vofy/Projects/pc2m9ukol/types.h
+1649097207 /home/vofy/Projects/pc2m9ukol/types.h
 
-1649089657 source:/home/vofy/Projects/pc2m9ukol/data_read.c
+1649094504 source:/home/vofy/Projects/pc2m9ukol/data_read.c
 	<stdio.h>
 	<stdlib.h>
+	"types.h"
 
-1649090712 source:/home/vofy/Projects/pc2m9ukol/types.c
+1649097142 source:/home/vofy/Projects/pc2m9ukol/types.c
 
-1649090372 source:/home/vofy/Projects/pc2m9ukol/data_analysis.c
+1649098821 source:/home/vofy/Projects/pc2m9ukol/data_analysis.c
 	<stdio.h>
 	<stdlib.h>
 	<stdbool.h>
 	"types.h"
 
-1649090382 source:/home/vofy/Projects/pc2m9ukol/data_print.c
+1649098679 source:/home/vofy/Projects/pc2m9ukol/data_print.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	<stdarg.h>
+	"types.h"
 	"data_analisys.h"
 
-1649090458 /home/vofy/Projects/pc2m9ukol/data_analisys.h
+1649092011 /home/vofy/Projects/pc2m9ukol/data_analisys.h
 	"types.h"
 
-1649069529 /home/vofy/Projects/pc2m9ukol/data_read.h
+1649091897 /home/vofy/Projects/pc2m9ukol/data_read.h
 
-1649090327 /home/vofy/Projects/pc2m9ukol/data_print.h
+1649098700 /home/vofy/Projects/pc2m9ukol/data_print.h
 

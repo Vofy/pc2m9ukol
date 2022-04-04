@@ -19,7 +19,7 @@ Temperature table:
 2010:   -6.4  -6.3   2.5  14.8  19.1  27.6  29.1  23.2  20.1  12.0   5.1   0.8
 
 
-Average temperature in 4/1999 was 12.2 deg. C.
+Average temperature in 6/2006 was 23.8 deg. C.
 
 
 Average temperature in year:
